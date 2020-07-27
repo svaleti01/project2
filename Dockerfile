@@ -5,5 +5,5 @@ RUN mvn package
 
 FROM openjdk:8-jre-alpine
 COPY --from=build /app/target/project2-0.0.1-SNAPSHOT.jar ./server.jar
-EXPOSE 80
+EXPOSE 3000
 CMD ["java", "-jar", "./server.jar"]
