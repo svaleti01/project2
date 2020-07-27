@@ -4,7 +4,6 @@ COPY . /app
 RUN mvn package
 
 FROM openjdk:8-jre-alpine
-WORKDIR /app
-COPY --from=build /app/target/project2-0.0.1-SNAPSHOT.jar /app
+COPY --from=build /app/target/project2-0.0.1-SNAPSHOT.jar ./server.jar
 EXPOSE 8080
-CMD ["java", "-jar", "./app/project2-0.0.1-SNAPSHOT.jar"]
+CMD ["java", "-jar", "./server.jar"]
