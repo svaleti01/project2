@@ -1,0 +1,18 @@
+{{- if .Values.route.enabled -}}
+{{- $fullName := include "starter-kit.fullname" . -}}
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: {{ $fullName }}-plants
+  annotations:
+    argocd.argoproj.io/sync-options: Validate=false
+spec:
+  #host: *.appdev-cloudnativ-734219-3b1fc50af0b2002f0241bdf5d2432efd-0000.us-east.containers.appdomain.cloud
+  #wildcardPolicy: Subdomain  
+  path: /PlantsByWebSphere
+  to:
+    kind: Service
+    name: {{ $fullName }}
+  tls:
+    termination: edge
+{{- end }}
