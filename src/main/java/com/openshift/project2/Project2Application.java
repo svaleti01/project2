@@ -15,7 +15,7 @@ public class Project2Application {
 	
 	@RequestMapping(value="")
 	public String getGreeting() {
-		return ("Hello Openshift!! Here I come, Welcome Me!!)");
+		return ("Hello Openshift!! Here I come, Welcome Me!! Thank you!)");
 	}
 
 }
