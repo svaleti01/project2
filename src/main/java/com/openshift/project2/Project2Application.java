@@ -13,7 +13,7 @@ public class Project2Application {
 		SpringApplication.run(Project2Application.class, args);
 	}
 	
-	@RequestMapping(value="/getGreeting")
+	@RequestMapping(value="")
 	public String getGreeting() {
 		return ("Hello Openshift!! Here I come, Welcome Me :)");
 	}
