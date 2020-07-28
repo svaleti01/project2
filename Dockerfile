@@ -6,4 +6,4 @@ RUN mvn package
 FROM openjdk:8-jre-alpine
 COPY --from=build /app/target/project2-0.0.1-SNAPSHOT.jar ./server.jar
 EXPOSE 9080
-CMD ["java", "-jar", "./server.jar"]
+ENTRYPOINT ["java", "-jar", "./server.jar"]
