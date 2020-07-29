@@ -1,4 +1,0 @@
-version: 0.1.0
-name: project2
-apiVersion: v1
-description: Argo CD Gitops
