@@ -11,8 +11,8 @@ import org.springframework.web.client.RestTemplate;
 @RestController
 public class Project2Application {
 	
-	@Value("${SERVICE_URL}")
-    private String SERVICE_URL;
+	@Value("${BASE_URL}")
+    private String BASE_URL;
 
 	public static void main(String[] args) {
 		SpringApplication.run(Project2Application.class, args);
@@ -20,7 +20,7 @@ public class Project2Application {
 	
 	@RequestMapping(value="")
 	public String getGreeting() {
-		final String url = SERVICE_URL + "/getgreeting";
+		final String url = BASE_URL + "/getgreeting";
 		RestTemplate restTemplate = new RestTemplate();
 		
 		String resp = restTemplate.getForObject(url, String.class);
