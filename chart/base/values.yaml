@@ -42,4 +42,6 @@ vcsInfo:
 
 partOf: ""
 
+connectsTo: project3
+
 runtime: spring
