@@ -3,7 +3,6 @@ kind: Deployment
 metadata:
   name: {{ include "starter-kit.fullname" . }}
   annotations:
-    sidecar.istio.io/inject: 'true'
   {{- if and .Values.vcsInfo.repoUrl .Values.vcsInfo.branch }}
     app.openshift.io/vcs-ref: {{ .Values.vcsInfo.branch }}
     app.openshift.io/vcs-uri: {{ .Values.vcsInfo.repoUrl }}
@@ -30,6 +29,8 @@ spec:
       app.kubernetes.io/instance: {{ .Release.Name }}
   template:
     metadata:
+      annotations:
+        sidecar.istio.io/inject: "true"
       labels:
         app.kubernetes.io/name: {{ include "starter-kit.name" . }}
         app.kubernetes.io/instance: {{ .Release.Name }}
