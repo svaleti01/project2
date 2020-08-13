@@ -18,7 +18,7 @@ public class Project2Application {
 		SpringApplication.run(Project2Application.class, args);
 	}
 	
-	@RequestMapping(value="")
+	@RequestMapping(value="/getgreeting")
 	public String getGreeting() {
 		final String url = BASE_URL + "/getgreeting";
 		RestTemplate restTemplate = new RestTemplate();
